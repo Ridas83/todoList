@@ -1,0 +1,104 @@
+body {
+
+    text-align: center;
+    background-color: rgb(33, 35, 35);
+    font-family: 'Courier New', Courier, monospace;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    color: rgb(202, 171, 0);
+
+
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    color: rgb(202, 171, 0);
+    text-shadow: 2px 2px 2px black;
+}
+
+input {
+    height: 30px;
+    width: 70%;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 10px;
+    background-color: black;
+    border: solid 0.5px rgb(0, 255, 251);
+    color: rgb(0, 255, 251);
+}
+
+li {
+    font-size: 20px;
+    color: rgb(202, 171, 0);
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 10px;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+li:hover {
+    color: rgb(247, 104, 104);
+}
+
+#addTaskButton {
+    padding: 10px;
+    background-color: rgb(41, 45, 45);
+    border: solid 0.5px rgb(58, 62, 62);
+    color: rgb(0, 255, 251);
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#addTaskButton:hover {
+    background-color: rgb(21, 28, 28);
+    border: solid 0.5px rgb(0, 255, 251);
+}
+
+img {
+    width: 20px;
+    height: 20px;
+}
+
+img:hover {
+    width: 22px;
+    height: 22px;
+}
+
+table {
+    width: 100%;
+}
+
+select {
+    margin-top: 40px;
+    background-color: black;
+    color: rgb(0, 255, 251);
+    margin-bottom: 40px;
+    cursor: pointer;
+    border: solid 0.5px rgb(202, 171, 0);
+    height: 30px;
+    width: 70%;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 10px;
+}
+
+select:hover {
+    border: solid 0.5px rgb(0, 255, 251);
+}
+
+.delete-button {
+    float: right;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+ul li.checked {
+    color: #e2e2d1;
+    text-decoration: line-through;
+
+}
