@@ -1,5 +1,4 @@
 body {
-
     text-align: center;
     background-color: rgb(33, 35, 35);
     font-family: 'Courier New', Courier, monospace;
@@ -7,8 +6,6 @@ body {
     width: 50%;
     padding: 10px;
     color: rgb(202, 171, 0);
-
-
 }
 
 h1 {
@@ -100,5 +97,4 @@ select:hover {
 ul li.checked {
     color: #e2e2d1;
     text-decoration: line-through;
-
 }
