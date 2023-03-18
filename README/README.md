@@ -4,4 +4,4 @@ Such a really simple application could very likely be developed with a smaller a
 
 I think the project meets excellent requirements and shows a deep understanding of the subject, at least considering that it is the basics of javascript. The user experience in the application is also good in all its simplicity. The filling interface is also pleasing to the eye and easy to use.
 
-Of course, the teacher knows better how well the program is actually implemented, so I would be happy to receive feedback on this project, which was fun to develop.
+Of course, the teacher knows better how well the program is actually implemented, so I would be happy to receive feedback on this project and possible errors in the program.
