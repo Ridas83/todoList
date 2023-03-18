@@ -44,8 +44,6 @@ addTaskButton.addEventListener("click", function () {
     deleteButton.addEventListener("click", function () {
       // When the delete button is clicked, remove the task item element from the task list, update the number of tasks, and delete the task from local storage
       taskList.removeChild(taskItem);
-      document.getElementById("numberOfTasks").innerHTML =
-        document.getElementsByTagName("li").length;
       deleteTaskFromLocalStorage(taskItem.id);
       // Update the number of tasks and show the list items
       document.getElementById("numberOfTasks").innerHTML =
