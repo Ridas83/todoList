@@ -1,13 +1,21 @@
 // Get the list element from the DOM
 const taskList = document.getElementById("list");
-
+let found;
 // Add a click event listener to the "Add Task" button
 addTaskButton.addEventListener("click", function () {
   // Get the task list from local storage, or create an empty array if it doesn't exist
   var storageList = JSON.parse(localStorage.getItem("lista")) || [];
 
   // Get the text from the input field
-  const text = document.getElementById("input").value;
+  let text = document.getElementById("input").value;
+  //The JavaScript trim() function is used to remove whitespace from the input.
+  text = text.trim();
+  found = false;
+  document.querySelectorAll("li").forEach(function (li) {
+    if (li.id == text) {
+      found = true;
+    }
+  });
 
   // If the text is empty, null, or less than 3 characters, display an error message
   if (text == "" || text == null || text.length < 3) {
@@ -16,8 +24,17 @@ addTaskButton.addEventListener("click", function () {
     document.getElementById("input").style.borderColor = "red";
     error.style.color = "red";
 
-    // Otherwise, create a new task object and add it to the storage list
-  } else {
+    // If the task is already found in the task list
+  } else if (found === true) {
+    const error = document.getElementById("error");
+    error.style.display = "block";
+    document.getElementById("input").style.borderColor = "red";
+    error.style.color = "red";
+    document.getElementById("error").innerHTML =
+      "You have already added the task";
+  }
+  // Otherwise, create a new task object and add it to the storage list
+  else {
     var storageObject = {
       task: text,
       class: "unchecked",
@@ -42,14 +59,15 @@ addTaskButton.addEventListener("click", function () {
     deleteButton.classList.add("delete-button");
 
     deleteButton.addEventListener("click", function () {
+      document.getElementById("numberOfTasks").innerHTML =
+        document.getElementsByTagName("li").length;
+
       // When the delete button is clicked, remove the task item element from the task list, update the number of tasks, and delete the task from local storage
       taskList.removeChild(taskItem);
       deleteTaskFromLocalStorage(taskItem.id);
       // Update the number of tasks and show the list items
       document.getElementById("numberOfTasks").innerHTML =
         document.getElementsByTagName("li").length;
-
-      console.log(localStorage.getItem("lista"));
     });
 
     taskItem.appendChild(deleteButton);
@@ -61,7 +79,6 @@ addTaskButton.addEventListener("click", function () {
   document.getElementById("numberOfTasks").innerHTML =
     document.getElementsByTagName("li").length;
   showListItems();
-  console.log(localStorage.getItem("lista"));
 });
 
 // Add a click event listener to the task list element
@@ -75,7 +92,6 @@ list.addEventListener(
       showListItems();
       changeClass(event.target.id);
     }
-    console.log(localStorage.getItem("lista"));
   },
   false
 );
@@ -181,8 +197,9 @@ function renderTasks() {
       // Adds an event listener to the delete button that removes the task item from the task list and local storage
       deleteButton.addEventListener("click", function () {
         taskList.removeChild(taskItem);
-
         deleteTaskFromLocalStorage(taskItem.id);
+        document.getElementById("numberOfTasks").innerHTML =
+          document.getElementsByTagName("li").length;
       });
 
       taskItem.appendChild(deleteButton);
