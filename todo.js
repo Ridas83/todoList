@@ -47,7 +47,10 @@ addTaskButton.addEventListener("click", function () {
       document.getElementById("numberOfTasks").innerHTML =
         document.getElementsByTagName("li").length;
       deleteTaskFromLocalStorage(taskItem.id);
-      showListItems();
+      // Update the number of tasks and show the list items
+      document.getElementById("numberOfTasks").innerHTML =
+        document.getElementsByTagName("li").length;
+
       console.log(localStorage.getItem("lista"));
     });
 
