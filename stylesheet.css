@@ -98,3 +98,18 @@ ul li.checked {
     color: #e2e2d1;
     text-decoration: line-through;
 }
+
+.delete-all-button {
+    padding: 10px;
+    background-color: rgb(30, 23, 23);
+    border: solid 0.5px rgb(58, 62, 62);
+    color: rgb(255, 0, 0);
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.delete-all-button:hover {
+    border-color: rgb(255, 0, 0);
+    background-color: black;
+}

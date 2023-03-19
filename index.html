@@ -19,10 +19,11 @@
         <option value="all">All</option>
         <option value="completed">Completed</option>
         <option value="incomplete">Incomplete</option>
-    </select>
+    </select><br>
+    <button class="delete-all-button" onclick="deleteAllItemsFromTheList()">Delete All</button>
     <p id="task-count">Number of tasks: <span id="numberOfTasks"></span></p>
-    <ul id="list" class="list"></ul>
-
+    <ul id="list" class="list">
+    </ul>
     <script src="todo.js"></script>
 </body>
 

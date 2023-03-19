@@ -209,3 +209,23 @@ function renderTasks() {
   document.getElementById("numberOfTasks").innerHTML =
     document.getElementsByTagName("li").length;
 }
+
+function deleteAllItemsFromTheList() {
+  const ulElement = document.getElementById("list");
+
+  if (ulElement.childNodes.length === 0) {
+    // check if there are no child nodes
+    alert("The list is empty.");
+  } else {
+    let areYouSure = confirm("Are you sure you want to clear the to-do list?");
+    if (areYouSure) {
+      const liElements = ulElement.querySelectorAll("li"); //Find all li elements
+      //Go through and remove
+      liElements.forEach((li) => li.remove());
+      //Clear localStorage
+      localStorage.clear();
+      document.getElementById("numberOfTasks").innerHTML =
+        document.getElementsByTagName("li").length;
+    }
+  }
+}
