@@ -212,8 +212,8 @@ function renderTasks() {
 
 function deleteAllItemsFromTheList() {
   const ulElement = document.getElementById("list");
-
-  if (ulElement.childNodes.length === 0) {
+  console.log(ulElement.childNodes.length);
+  if (ulElement.childNodes.length < 2) {
     // check if there are no child nodes
     alert("The list is empty.");
   } else {
@@ -228,4 +228,5 @@ function deleteAllItemsFromTheList() {
         document.getElementsByTagName("li").length;
     }
   }
+  console.log(taskList);
 }
